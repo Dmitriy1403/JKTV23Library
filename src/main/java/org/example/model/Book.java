@@ -1,6 +1,8 @@
 package org.example.model;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 public class Book {
@@ -11,14 +13,14 @@ public class Book {
 
     private String title;
 
-    private Author[] authors;
+    private List<Author> authors = new ArrayList<>();
     private int publishedYear;
 
     public Book() {
         id = count++;
     }
 
-    public Book(String title, Author[] authors, int publishedYear)
+    public Book(String title, List<Author> authors, int publishedYear)
     {
         id = count++;
         this.title = title;
@@ -42,11 +44,11 @@ public class Book {
         this.title = title;
     }
 
-    public Author[] getAuthors() {
+    public List<Author> getAuthors() {
         return authors;
     }
 
-    public void setAuthors(Author[] authors) {
+    public void setAuthors(List<Author> authors) {
         this.authors = authors;
     }
 
@@ -68,7 +70,7 @@ public class Book {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, Arrays.hashCode(authors), publishedYear);
+        return Objects.hash(id, title, Arrays.hashCode(authors.toArray()));
     }
 
 
@@ -77,7 +79,7 @@ public class Book {
         final StringBuilder sb = new StringBuilder("Book{");
         sb.append("id=").append(id);
         sb.append(", title='").append(title).append('\'');
-        sb.append(", authors=").append(Arrays.toString(authors));
+        sb.append(", authors=").append((authors));
         sb.append(", publishedYear=").append(publishedYear);
         sb.append('}');
         return sb.toString();
