@@ -14,7 +14,11 @@ import static org.mockito.Mockito.when;
 class AppHelperUserInputTest {
 
 //    Input inputMock;
+<<<<<<< HEAD
 //    AppHelperUser appHelperUserInput = new AppHelperUser();
+=======
+//    AppHelperUserInput appHelperUserInput = new AppHelperUserInput();
+>>>>>>> 9178d0340341c88c548ba3c5f0cba85bef2b65a9
 //    @BeforeEach
 //    void setUp() {
 //        inputMock = Mockito.mock(ConsoleInput.class);
